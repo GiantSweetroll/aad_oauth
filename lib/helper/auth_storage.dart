@@ -15,6 +15,7 @@ class AuthStorage {
   Future<void> saveTokenToCache(Token token) async {
     var data = Token.toJsonMap(token);
     var json = jsonEncode(data);
+    print('Saving user data: $json');
     await _secureStorage.write(key: _tokenIdentifier, value: json);
   }
 
@@ -23,6 +24,7 @@ class AuthStorage {
     if (json == null) return emptyToken as FutureOr<T>;
     try {
       var data = jsonDecode(json);
+      print('Loaded data: $data');
       return _getTokenFromMap<T>(data) as FutureOr<T>;
     } catch (exception) {
       print(exception);
