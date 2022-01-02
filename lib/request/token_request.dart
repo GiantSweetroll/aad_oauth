@@ -23,11 +23,16 @@ class TokenRequestDetails {
     }
 
     if (config.clientSecret != null) {
+      print('Testing2: client-secret ${config.clientSecret}');
       params.putIfAbsent('client_secret', () => config.clientSecret!);
     }
 
     if (config.codeVerifier != null) {
       params.putIfAbsent('code_verifier', () => config.codeVerifier!);
+    }
+
+    if(config.policy != null) {
+      params.putIfAbsent('p', () => config.policy!);
     }
   }
 }
