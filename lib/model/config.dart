@@ -133,7 +133,7 @@ class Config {
       this.codeVerifier,
       this.userAgent})
       : authorizationUrl = isB2C
-            ? 'https://$tenant.b2clogin.com/$tenant.onmicrosoft.com/$policy/oauth2/v2.0/authorize'
+            ? 'https://$tenant.b2clogin.com/$tenant.onmicrosoft.com/oauth2/v2.0/authorize'
             : 'https://login.microsoftonline.com/$tenant/oauth2/v2.0/authorize',
         tokenUrl = isB2C
             ? 'https://$tenant.b2clogin.com/$tenant.onmicrosoft.com/$policy/oauth2/v2.0/token'

@@ -53,6 +53,7 @@ class AuthorizationRequest {
 
     if (config.isB2C) {
       parameters.addAll({
+        'p' : config.policy!,
         'nonce': config.nonce,
       });
     }
