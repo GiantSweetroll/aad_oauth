@@ -29,7 +29,6 @@ class RequestToken {
     var response = await post(Uri.parse(url), body: params, headers: headers);
     final tokenJson = json.decode(response.body);
     if (tokenJson is Map<String, dynamic>) {
-      print('received token details: $tokenJson');
       var token = Token.fromJson(tokenJson);
       return token;
     }
