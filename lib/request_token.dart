@@ -31,6 +31,7 @@ class RequestToken {
     final tokenJson = json.decode(response.body);
     if (tokenJson is Map<String, dynamic>) {
       var token = Token.fromJson(tokenJson);
+      print('Token: $token');
       return token;
     }
     throw ArgumentError('Token json is invalid');
