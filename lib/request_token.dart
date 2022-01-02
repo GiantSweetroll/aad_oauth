@@ -26,6 +26,7 @@ class RequestToken {
 
   Future<Token> _sendTokenRequest(String url, Map<String, String> params,
       Map<String, String> headers) async {
+    print('Token URL: $url');
     var response = await post(Uri.parse(url), body: params, headers: headers);
     final tokenJson = json.decode(response.body);
     if (tokenJson is Map<String, dynamic>) {
