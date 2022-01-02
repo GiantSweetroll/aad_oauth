@@ -21,5 +21,9 @@ class TokenRefreshRequestDetails {
     if (config.clientSecret != null) {
       params.putIfAbsent('client_secret', () => config.clientSecret!);
     }
+
+    if(config.policy != null) {
+      params.putIfAbsent('p', () => config.policy!);
+    }
   }
 }
