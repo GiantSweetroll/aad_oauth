@@ -23,7 +23,6 @@ class TokenRequestDetails {
     }
 
     if (config.clientSecret != null) {
-      // print('Testing2: client-secret ${config.clientSecret}');
       params.putIfAbsent('client_secret', () => config.clientSecret!);
     }
 

@@ -26,12 +26,10 @@ class RequestToken {
 
   Future<Token> _sendTokenRequest(String url, Map<String, String> params,
       Map<String, String> headers) async {
-    print('Token URL: $url');
     var response = await post(Uri.parse(url), body: params, headers: headers);
     final tokenJson = json.decode(response.body);
     if (tokenJson is Map<String, dynamic>) {
       var token = Token.fromJson(tokenJson);
-      print('Token: $token');
       return token;
     }
     throw ArgumentError('Token json is invalid');
